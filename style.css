@@ -27,6 +27,8 @@ h2{
 }
 
 /* Basic set up*/
+
+
 .page-wrapper {
     width: 100%;
     height: auto;
@@ -34,8 +36,7 @@ h2{
 
 .nav-wrapper {
     width: 100%;
-    position: -webkit-sticky;
-    /* Safari */
+    position: -webkit-sticky;/* Safari */
     position: sticky;
     top: 0;
     background-color: #fff;
@@ -68,7 +69,7 @@ h2{
     font-size: 0.9rem;
     font-weight: 400;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-out; /*ändra till ease-out*/
 }
 
 .nav-item a:hover {
@@ -273,3 +274,142 @@ h2{
     font-weight: normal;
     margin: 0;
   }
+
+  /* animation for the  bar on top the nav */
+  .grad-bar{
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: gradbar 15s ease infinite;
+      -moz-animation: gradbar 15s ease infinite;
+      animation: gradbar 15s ease infinite;
+  }
+  @-webkit-keyframes gradbar{
+    0% {
+      background-position: 0% 50%
+  }
+  50% {
+      background-position: 100% 50%
+  }
+  100% {
+      background-position: 0% 50%
+  }
+  }
+@-moz-keyframes gradbar {
+  0% {
+    background-position: 0% 50%
+}
+50% {
+    background-position: 100% 50%
+}
+100% {
+    background-position: 0% 50%
+}
+}
+@keyframes gradbar {
+  0% {
+    background-position: 0% 50%
+}
+50% {
+    background-position: 100% 50%
+}
+100% {
+    background-position: 0% 50%
+}
+}
+
+  /* Media Queries */
+  
+    /* Mobile Devices - Phones/Tablets */
+
+    /* MOBILE HEADINGS */
+    @media only screen and (max-width: 720px) { 
+      .features {
+        flex-direction: column;
+        padding: 50px;
+      }
+    h1 {
+      font-size: 1.9rem;
+
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    p{
+      font-size: 0.8rem;
+    }
+
+    /* MOBILE NAVIGATION */
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      justify-content: center;
+      top: 50px;
+      background-color: #ffffff;
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      overflow:hidden;
+      opacity: 90%;
+    }
+    .navbar li {
+      padding: 10px;
+    }
+  
+    .navbar li a {
+      font-size: 1rem;
+    }
+    /* SECTIONS */
+    .headline {
+      margin-top: 5rem;
+      padding-top: 0.5rem;
+      display: block;
+      height: 50vh;
+    }
+
+    .feature-container p {
+      margin-bottom: 25px;
+    }
+    
+    .feature-container {
+      margin-top: 20px;
+    }
+    
+    .feature-container:nth-child(2) {
+      order: -1;
+    }
+    /* footer */
+    .footer {
+      font-size: 14px;
+    }
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .footer .footer-center i {
+      margin-left: 0;
+    }
+  }
+
+   /* effect*/
+   .typewriter {
+    font-family: 'Poppins';
+    font-size: 2.4rem;
+   }
+   .typewriter::after {
+    content: '|';
+    transition: ease-in-out 0.3s;
+    opacity: 1;
+    animation: cursor 1s infinite;
+   }
+    @keyframes cursor {
+      0%, 100% {opacity: 1;}
+      50%{opacity: 0;}
+    }
